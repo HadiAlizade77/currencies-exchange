@@ -15,7 +15,6 @@ console.log(store.getState());
 store.subscribe(() => console.log(store.getState()));
 store.dispatch(addTransaction({ name: 'dispatch test', amount: 10000 }));
 // store.dispatch(removeTransaction({ name: 'default' }));
-store.dispatch(setRate({ rate: 5 }));
 
 const jsx = (
   <Provider store={store}>
