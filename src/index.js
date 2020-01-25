@@ -6,15 +6,16 @@ import {
   ContainerElement,
 } from './styles';
 import configureStore from './store/configureStore';
-import { App } from './components'
-import { addTransaction, removeTransaction } from './actions'
+import { App } from './components';
+import { addTransaction, removeTransaction, setRate } from './actions';
 
 const store = configureStore();
 
 console.log(store.getState());
 store.subscribe(() => console.log(store.getState()));
 store.dispatch(addTransaction({ name: 'dispatch test', amount: 10000 }));
-store.dispatch(removeTransaction({ name: 'default' }));
+// store.dispatch(removeTransaction({ name: 'default' }));
+store.dispatch(setRate({ rate: 5 }));
 
 const jsx = (
   <Provider store={store}>
