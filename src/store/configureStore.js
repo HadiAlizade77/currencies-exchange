@@ -1,10 +1,10 @@
 import { createStore, combineReducers } from 'redux';
-import { testReducer } from '../reducers';
+import { transactionReducer } from '../reducers';
 
 export default () => {
   const store = createStore(
     combineReducers({
-      testReducer
+      transaction: transactionReducer,
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   );

@@ -7,13 +7,14 @@ import {
 } from './styles';
 import configureStore from './store/configureStore';
 import { App } from './components'
-import { addAction } from './actions'
+import { addTransaction, removeTransaction } from './actions'
 
 const store = configureStore();
 
 console.log(store.getState());
 store.subscribe(() => console.log(store.getState()));
-store.dispatch(addAction({ payload: 'dispatch test' }));
+store.dispatch(addTransaction({ name: 'dispatch test', amount: 10000 }));
+store.dispatch(removeTransaction({ name: 'default' }));
 
 const jsx = (
   <Provider store={store}>
