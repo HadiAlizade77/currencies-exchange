@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import numeral from 'numeral';
 
 export const App = ({
   currencyRate,
@@ -9,17 +8,27 @@ export const App = ({
 
   const handleSetRate = (e) => {
     const { value } = e.target;
-    const roundedValue = numeral(value).format('0.00');
+    const roundedValue = parseFloat(value).toFixed(2);
+
+    if (!value || value < 0) {
+      setRateInput(0.01);
+      return setRate({ rate: 0.01 });
+    }
 
     setRateInput(value);
     setRate({ rate: roundedValue });
   };
 
+  const handleSubmit = (e) => e.preventDefault();
+
   return (
     <>
       <h1>TEST App.js</h1>
       <div>
-        <form>
+        <form
+          onSubmit={handleSubmit}
+          noValidate={true}
+        >
           <label>Set rate: </label>
           <input
             type="number"
