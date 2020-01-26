@@ -10,9 +10,14 @@ export const App = ({
     const { value } = e.target;
     const roundedValue = parseFloat(value).toFixed(2);
 
-    if (!value || value < 0) {
-      setRateInput(0.01);
-      return setRate({ rate: 0.01 });
+    if (value < 0) {
+      setRateInput(0.00);
+      return setRate({ rate: 0.00 });
+    }
+
+    if (!value) {
+      setRateInput('');
+      return setRate({ rate: 0.00 });
     }
 
     setRateInput(value);
