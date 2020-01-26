@@ -11,8 +11,8 @@ body {
 `;
 
 export const ContainerElement = styled.div`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; */
   background-color: #1f2835;
 `;

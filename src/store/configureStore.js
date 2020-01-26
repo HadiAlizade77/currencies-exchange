@@ -7,7 +7,7 @@ import {
 export default () => {
   const store = createStore(
     combineReducers({
-      transaction: transactionReducer,
+      transactions: transactionReducer,
       configuration: configurationReducer,
     }),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

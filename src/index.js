@@ -6,7 +6,7 @@ import {
   ContainerElement,
 } from './styles';
 import configureStore from './store/configureStore';
-import { App } from './components';
+import { App, TransactionList } from './components';
 import { addTransaction, removeTransaction, setRate } from './actions';
 
 const store = configureStore();
@@ -21,6 +21,7 @@ const jsx = (
     <ContainerElement>
       <GlobalStyleElement />
       <App />
+      <TransactionList />
     </ContainerElement>
   </Provider>
 );
