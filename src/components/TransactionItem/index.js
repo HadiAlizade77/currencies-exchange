@@ -1,1 +1,1 @@
-export { TransactionItem } from './TransactionItem';
+export { default as TransactionItem } from './connect';
