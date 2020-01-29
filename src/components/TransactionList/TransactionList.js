@@ -11,10 +11,12 @@ export const TransactionList = ({
     amount={amount}
     rate={rate} />, transactions);
 
+  const isTransactionListEmpty = !transactionList.length;
+
   return (
     <>
       <h1>TEST TransactionList.js</h1>
-      {transactionList}
+      {isTransactionListEmpty ? <p>No transactions</p> : transactionList}
     </>
   );
 };
