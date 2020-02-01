@@ -64,7 +64,6 @@ export const AddTransaction = ({
             type='text'
             value={nameInput}
             onChange={(e) => handleNameInput(e)}
-            onBlur={() => removeValidationError(setNameInputError)}
             isValidationError={Boolean(nameInputError)}
           />
           <h4>{nameInputError || null}</h4>
@@ -76,7 +75,6 @@ export const AddTransaction = ({
             type='number'
             value={amountInput}
             onChange={(e) => handleAmountInput(e)}
-            onBlur={() => removeValidationError(setAmountInputError)}
             isValidationError={Boolean(amountInputError)}
           />
           <h4>{amountInputError || null}</h4>
