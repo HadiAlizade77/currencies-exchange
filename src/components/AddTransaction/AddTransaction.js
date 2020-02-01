@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { InputElement } from '../../styles';
+import { InputElement, WrapperDivElement } from '../../styles';
 import { removeValidationError, getRoundedValue } from '../../utils';
 import { ONLY_POSITIVE, DUPLICATED, NO_VALUE } from '../../constants';
+
 
 export const AddTransaction = ({
   addTransaction,
@@ -53,7 +54,7 @@ export const AddTransaction = ({
 
 
   return (
-    <>
+    <WrapperDivElement>
       <form
         onSubmit={(e) => handleAddTransaction(e)}
         noValidate={true}
@@ -83,6 +84,6 @@ export const AddTransaction = ({
 
         <button>Add transaction</button>
       </form>
-    </>
+    </WrapperDivElement>
   );
 };

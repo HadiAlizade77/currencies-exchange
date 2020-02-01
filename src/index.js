@@ -4,9 +4,10 @@ import { Provider } from 'react-redux';
 import {
   GlobalStyleElement,
   ContainerElement,
+  HeaderElement,
 } from './styles';
 import configureStore from './store/configureStore';
-import { App, TransactionList, AddTransaction } from './components';
+import { Rate, TransactionList, AddTransaction } from './components';
 import { addTransaction, removeTransaction, setRate } from './actions';
 
 const store = configureStore();
@@ -20,7 +21,8 @@ const jsx = (
   <Provider store={store}>
     <ContainerElement>
       <GlobalStyleElement />
-      <App />
+      <HeaderElement>Currency Echange App</HeaderElement>
+      <Rate />
       <AddTransaction />
       <TransactionList />
     </ContainerElement>

@@ -11,15 +11,30 @@ body {
 `;
 
 export const ContainerElement = styled.div`
-  /* display: flex;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; */
-  background-color: #1f2835;
+  justify-content: space-around;
+  background-color: #2424a4;
+`;
+
+export const WrapperDivElement = styled.div`
+flex-basis: 100%;
+text-align: center;
+border-bottom: 2px solid #8c8cd4;
+margin: 10px;
+padding: 20px;
 `;
 
 export const InputElement = styled.input`
-border: 2px solid ${(props) => (props.isValidationError ? 'red' : 'black')};
+border: 3px solid ${(props) => (props.isValidationError ? '#c4215f' : 'none')};
 padding: 2px;
 margin: 2px;
 outline: none;
+`;
+
+export const HeaderElement = styled.header`
+flex-basis: 100vw;
+font-size: 50px;
+text-align: center;
+margin: 20px 5px;
 `;

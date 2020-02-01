@@ -1,5 +1,6 @@
 import React from 'react';
 import { TransactionItem } from '..';
+import { WrapperDivElement } from '../../styles';
 
 export const TransactionList = ({
   transactions,
@@ -14,9 +15,9 @@ export const TransactionList = ({
   const isTransactionListEmpty = !transactionList.length;
 
   return (
-    <>
-      <h1>TEST TransactionList.js</h1>
+    <WrapperDivElement >
+      <h2>List of transactions: </h2>
       {isTransactionListEmpty ? <p>No transactions</p> : transactionList}
-    </>
+    </WrapperDivElement>
   );
 };
