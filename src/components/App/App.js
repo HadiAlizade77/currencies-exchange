@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getRoundedValue } from '../../utils';
 
 export const App = ({
   currencyRate,
@@ -8,7 +9,7 @@ export const App = ({
 
   const handleSetRate = (e) => {
     const { value } = e.target;
-    const roundedValue = parseFloat(value).toFixed(2);
+    const roundedValue = getRoundedValue(value);
 
     if (value < 0) {
       setRateInput(0.00);

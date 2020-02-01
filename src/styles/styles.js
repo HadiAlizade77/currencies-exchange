@@ -16,3 +16,10 @@ export const ContainerElement = styled.div`
   justify-content: space-around; */
   background-color: #1f2835;
 `;
+
+export const InputElement = styled.input`
+border: 2px solid ${(props) => (props.isValidationError ? 'red' : 'black')};
+padding: 2px;
+margin: 2px;
+outline: none;
+`;

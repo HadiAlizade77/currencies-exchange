@@ -1,4 +1,5 @@
 import React from 'react';
+import { getRoundedValue } from '../../utils';
 
 export const TransactionItem = ({
   name,
@@ -7,6 +8,6 @@ export const TransactionItem = ({
   removeTransaction,
 }) => (
     <>
-      <p>{name} - {amount} EUR - {amount * rate} PLN</p>
+      <p>Name: {name} - {amount} EUR - {getRoundedValue(amount * rate)} PLN</p>
       <button onClick={() => removeTransaction({ name })}>Remove transaction</button>
     </>);
