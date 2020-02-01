@@ -7,6 +7,12 @@ export const getBiggestTransaction = _.compose(
   getTransactions,
 );
 
+export const getTransactionSum = _.compose(
+  _.sumBy('amount'),
+  getTransactions,
+);
+
+
 export const isTransactionNameDuplicated = (state) => (name) => _.compose(
   Boolean,
   _.find({ name }),

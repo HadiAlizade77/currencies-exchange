@@ -7,6 +7,7 @@ export const TransactionList = ({
   transactions,
   rate,
   biggestTransaction,
+  transactionSum,
 }) => {
   const transactionList = _.map(({ name, amount }) => <TransactionItem
     key={name}
@@ -16,15 +17,19 @@ export const TransactionList = ({
 
   const isTransactionListEmpty = !transactionList.length;
 
-  console.log({ biggestTransaction });
-
   return (
     <WrapperDivElement>
       {!isTransactionListEmpty
         ? <>
           <h2>The biggest transaction: </h2>
-          {`Transaction name: ${biggestTransaction.name} - amount: ${biggestTransaction.amount} EUR - ${getRoundedValue(biggestTransaction.amount * rate)} PLN`}
+          {`Transaction name: ${biggestTransaction.name}
+          - amount: ${biggestTransaction.amount} EUR
+          - ${getRoundedValue(biggestTransaction.amount * rate)} PLN`}
+
+          <h2>Sum of transactions: </h2>
+          <p>{transactionSum} EUR</p>
         </>
+
         : null
       }
 
