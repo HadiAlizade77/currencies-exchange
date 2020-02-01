@@ -1,7 +1,7 @@
 import {
   ADD_TRANSACTION,
   REMOVE_TRANSACTION,
-} from '../actions';
+} from '../constants';
 
 export const transactionReducer = (state = [{ name: 'default', amount: 100 }], action) => {
   switch (action.type) {

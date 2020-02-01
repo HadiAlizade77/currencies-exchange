@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { getRoundedValue } from '../../utils';
+import { DEFAULT_RATE } from '../../constants';
 
 export const App = ({
   currencyRate,
@@ -12,13 +13,13 @@ export const App = ({
     const roundedValue = getRoundedValue(value);
 
     if (value < 0) {
-      setRateInput(0.00);
-      return setRate({ rate: 0.00 });
+      setRateInput(DEFAULT_RATE);
+      return setRate({ rate: DEFAULT_RATE });
     }
 
     if (!value) {
       setRateInput('');
-      return setRate({ rate: 0.00 });
+      return setRate({ rate: DEFAULT_RATE });
     }
 
     setRateInput(value);

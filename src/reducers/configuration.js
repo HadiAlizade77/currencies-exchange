@@ -1,6 +1,6 @@
 import {
   SET_RATE,
-} from '../actions';
+} from '../constants';
 
 const DEFAULT_RATE = 1.99;
 

@@ -1,7 +1,7 @@
 import {
   ADD_TRANSACTION,
   REMOVE_TRANSACTION,
-} from './constants';
+} from '../constants';
 
 export const addTransaction = ({ name, amount }) => ({
   type: ADD_TRANSACTION,

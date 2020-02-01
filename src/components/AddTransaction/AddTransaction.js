@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { InputElement } from '../../styles';
 import { removeValidationError, getRoundedValue } from '../../utils';
+import { ONLY_POSITIVE, DUPLICATED, NO_VALUE } from '../../constants';
 
 export const AddTransaction = ({
   addTransaction,
@@ -17,19 +18,19 @@ export const AddTransaction = ({
     console.log({ nameInput, amountInput });
 
     if (isTransactionNameDuplicated(nameInput)) {
-      return setNameInputError('duplicated');
+      return setNameInputError(DUPLICATED);
     }
 
     if (!nameInput) {
-      return setNameInputError('no value');
+      return setNameInputError(NO_VALUE);
     }
 
     if (!amountInput) {
-      return setAmountInputError('no value');
+      return setAmountInputError(NO_VALUE);
     }
 
     if (amountInput <= 0) {
-      return setAmountInputError('amount must be positive number');
+      return setAmountInputError(ONLY_POSITIVE);
     }
 
     const roundedAmount = getRoundedValue(amountInput);
