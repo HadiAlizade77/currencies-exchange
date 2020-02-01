@@ -2,6 +2,7 @@ import React from 'react';
 
 export const AddTransaction = ({
   transactions,
+  isTransactionNameDuplicated,
 }) => {
   console.log({ transactions });
 
