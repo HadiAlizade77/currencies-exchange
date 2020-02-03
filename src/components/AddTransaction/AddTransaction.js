@@ -3,10 +3,10 @@ import { InputElement, WrapperDivElement } from '../../styles';
 import { removeValidationError, getRoundedValue } from '../../utils';
 import { ONLY_POSITIVE, DUPLICATED, NO_VALUE } from '../../constants';
 
-
 export const AddTransaction = ({
   addTransaction,
   isTransactionNameDuplicated,
+  rate,
 }) => {
   const [nameInput, setNameInput] = useState('');
   const [nameInputError, setNameInputError] = useState(false);
@@ -82,6 +82,9 @@ export const AddTransaction = ({
           <h4>{amountInputError || null}</h4>
         </div>
 
+        <div>
+          <p>Amount in PLN: {getRoundedValue(amountInput * rate)}</p>
+        </div>
 
         <button>Add transaction</button>
       </form>
