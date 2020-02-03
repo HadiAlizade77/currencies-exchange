@@ -13,24 +13,24 @@ it('adds transaction', () => {
     amount: 100,
   };
 
-  const result = {
+  const expected = {
     type: ADD_TRANSACTION,
     payload,
   };
 
-  expect(addTransaction(payload)).toEqual(result);
+  expect(addTransaction(payload)).toEqual(expected);
 });
 
 
 it('removes transaction', () => {
   const name = 'test';
 
-  const result = {
+  const expected = {
     type: REMOVE_TRANSACTION,
     payload: {
       name,
     },
   };
 
-  expect(removeTransaction({ name })).toEqual(result);
+  expect(removeTransaction({ name })).toEqual(expected);
 });

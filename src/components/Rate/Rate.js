@@ -15,16 +15,16 @@ export const Rate = ({
 
     if (value < 0) {
       setRateInput(DEFAULT_RATE);
-      return setRate({ rate: DEFAULT_RATE });
+      return setRate(DEFAULT_RATE);
     }
 
     if (!value) {
       setRateInput('');
-      return setRate({ rate: DEFAULT_RATE });
+      return setRate(DEFAULT_RATE);
     }
 
     setRateInput(value);
-    setRate({ rate: roundedValue });
+    setRate(roundedValue);
   };
 
   const handleSubmit = (e) => e.preventDefault();

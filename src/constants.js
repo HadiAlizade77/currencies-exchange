@@ -6,4 +6,4 @@ export const DUPLICATED = 'duplicated';
 export const NO_VALUE = 'no value';
 export const ONLY_POSITIVE = 'amount must be positive number';
 
-export const DEFAULT_RATE = 0.00;
+export const DEFAULT_RATE = 1.99;

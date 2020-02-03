@@ -4,10 +4,10 @@ import { SET_RATE } from '../../constants';
 it('sets given rate', () => {
   const rate = 2.00;
 
-  const result = {
+  const expected = {
     type: SET_RATE,
     rate,
   };
 
-  expect(setRate(rate)).toEqual(result);
+  expect(setRate(rate)).toEqual(expected);
 });

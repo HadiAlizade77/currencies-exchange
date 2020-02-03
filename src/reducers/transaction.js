@@ -3,7 +3,7 @@ import {
   REMOVE_TRANSACTION,
 } from '../constants';
 
-export const transactionReducer = (state = [{ name: 'default', amount: 100 }], action) => {
+export const transactionReducer = (state = [], action) => {
   switch (action.type) {
     case ADD_TRANSACTION:
       return [

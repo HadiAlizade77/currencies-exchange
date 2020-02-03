@@ -21,7 +21,7 @@ const jsx = (
   <Provider store={store}>
     <ContainerElement>
       <GlobalStyleElement />
-      <HeaderElement>Currency Echange App</HeaderElement>
+      <HeaderElement>Currency Exchange App</HeaderElement>
       <Rate />
       <AddTransaction />
       <TransactionList />

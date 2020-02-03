@@ -1,8 +1,7 @@
 import {
   SET_RATE,
+  DEFAULT_RATE,
 } from '../constants';
-
-const DEFAULT_RATE = 1.99;
 
 export const configurationReducer = (state = {
   rate: DEFAULT_RATE,
@@ -11,7 +10,7 @@ export const configurationReducer = (state = {
     case SET_RATE:
       return {
         ...state,
-        ...action.rate,
+        rate: action.rate,
       };
 
     default:
