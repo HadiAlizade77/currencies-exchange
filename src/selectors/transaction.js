@@ -12,6 +12,6 @@ export const getTransactionSum = _.compose(
 
 export const isTransactionNameDuplicated = (state) => (name) => _.compose(
   Boolean,
-  _.find({ name }),
+  _.find({ name: _.trim(name) }),
   getTransactions,
 )(state);

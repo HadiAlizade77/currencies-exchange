@@ -36,14 +36,14 @@ export const AddTransaction = ({
 
     const roundedAmount = parseFloat(getRoundedValue(amountInput));
 
-    addTransaction({ name: nameInput, amount: roundedAmount });
+    addTransaction({ name: _.trim(nameInput), amount: roundedAmount });
   };
 
   const handleNameInput = (e) => {
     const { value } = e.target;
 
     removeValidationError(setNameInputError);
-    setNameInput(_.trim(value));
+    setNameInput(value);
   };
 
   const handleAmountInput = (e) => {
