@@ -7,14 +7,13 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     letter-spacing: 2px;
     color: #ebecec;
+    background-color: #2424a4;
   }
 `;
 
 export const ContainerElement = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  background-color: #2424a4;
 `;
 
 export const WrapperDivElement = styled.div`

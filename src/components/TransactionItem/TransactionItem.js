@@ -8,6 +8,7 @@ export const TransactionItem = ({
   removeTransaction,
 }) => (
     <>
-      <p>Name: {name} - {amount} EUR - {getRoundedValue(amount * rate)} PLN</p>
+      <p>Name: {name}</p>
+      <p>Amount: {amount} EUR - {getRoundedValue(amount * rate)} PLN</p>
       <button onClick={() => removeTransaction({ name })}>Remove transaction</button>
     </>);

@@ -13,30 +13,40 @@ export const AddTransaction = ({
   const [amountInput, setAmountInput] = useState('');
   const [amountInputError, setAmountInputError] = useState(false);
 
-
-  const handleAddTransaction = (e) => {
-    e.preventDefault();
-    console.log({ nameInput, amountInput });
-
+  const validateInput = () => {
     if (isTransactionNameDuplicated(nameInput)) {
-      return setNameInputError(DUPLICATED);
+      setNameInputError(DUPLICATED);
+      return false;
     }
 
     if (!nameInput) {
-      return setNameInputError(NO_VALUE);
+      setNameInputError(NO_VALUE);
+      return false;
     }
 
     if (!amountInput) {
-      return setAmountInputError(NO_VALUE);
+      setAmountInputError(NO_VALUE);
+      return false;
     }
 
     if (amountInput <= 0) {
-      return setAmountInputError(ONLY_POSITIVE);
+      setAmountInputError(ONLY_POSITIVE);
+      return false;
     }
 
-    const roundedAmount = parseFloat(getRoundedValue(amountInput));
+    return true;
+  };
 
-    addTransaction({ name: _.trim(nameInput), amount: roundedAmount });
+  const handleAddTransaction = (e) => {
+    e.preventDefault();
+
+    const isInputValidated = validateInput();
+
+    if (isInputValidated) {
+      const roundedAmount = parseFloat(getRoundedValue(amountInput));
+
+      addTransaction({ name: _.trim(nameInput), amount: roundedAmount });
+    }
   };
 
   const handleNameInput = (e) => {
@@ -52,7 +62,6 @@ export const AddTransaction = ({
     removeValidationError(setAmountInputError);
     setAmountInput(value);
   };
-
 
   return (
     <WrapperDivElement>

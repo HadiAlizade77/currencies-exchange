@@ -22,14 +22,17 @@ export const TransactionList = ({
       {!isTransactionListEmpty
         ? <>
           <h2>The biggest transaction: </h2>
-          {`Transaction name: ${biggestTransaction.name}
-          - amount: ${biggestTransaction.amount} EUR
+          <p>
+            {`Name: ${biggestTransaction.name}`}
+          </p>
+          <p>
+            {`Amount: ${biggestTransaction.amount} EUR
           - ${getRoundedValue(biggestTransaction.amount * rate)} PLN`}
+          </p>
 
           <h2>Sum of transactions: </h2>
           <p>{transactionSum} EUR</p>
         </>
-
         : null
       }
 

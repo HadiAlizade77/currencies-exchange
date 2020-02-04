@@ -4,6 +4,6 @@ export const SET_RATE = 'SET_RATE';
 
 export const DUPLICATED = 'duplicated';
 export const NO_VALUE = 'no value';
-export const ONLY_POSITIVE = 'amount must be positive number';
+export const ONLY_POSITIVE = 'number must be positive';
 
-export const DEFAULT_RATE = 1.99;
+export const DEFAULT_RATE = 4.50;
